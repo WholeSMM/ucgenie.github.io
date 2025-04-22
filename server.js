@@ -22,6 +22,7 @@ app.get('/api', async (req, res) => {
       }
     );
     const data = await apiRes.json();
+console.log(data);  // 👈 Add this line to see full API response in Render logs
     if (data.status === 'success') return res.json({ name: data.data.nickname });
     return res.status(404).json({ error: 'Player not found' });
   } catch (err) {
